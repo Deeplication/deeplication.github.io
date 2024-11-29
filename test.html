@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brython Example</title>
-    <!-- Include the Brython script -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
+<script src="/src/brython.js"></script>
+<script src="/src/brython_stdlib.js"></script>
 </head>
-<body onload="brython()">
 
-<h1>Welcome to Brython!</h1>
+<body>
+<script type="text/python">
 
-<!-- Python code will update this element -->
-<p id="message"></p>
+from browser import document
+from browser.widgets.dialog import InfoDialog
 
-<!-- Python code embedded within the <py-script> tag -->
-<py-script>
-    from browser import document
-    document["message"].text = "Hello from Python in the browser!"
-</py-script>
+def click(ev):
+    InfoDialog("Hello", f"Hello, {document['zone'].value} !")
 
+# bind event 'click' on button to callback function
+document["echo"].bind("click", click)
+
+</script>
+<input id="zone">
+<button id="echo">click !</button>
 </body>
+
 </html>
