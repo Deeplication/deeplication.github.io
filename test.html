@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brython Example</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
+</head>
+<body onload="brython()">
+
+<h1>Welcome to Brython</h1>
+
+<py-script>
+    from browser import document
+    document["message"].text = "Hello from Python in the browser!"
+</py-script>
+
+<p id="message"></p>
+
+</body>
+</html>
