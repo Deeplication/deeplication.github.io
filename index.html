@@ -12,8 +12,8 @@
     <py-script src=”test.py”></py-script>
     <script defer src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
 </head>
-<body>
-    <py-script>
+<body onload="brython()">
+<py-script>
     from browser import document
     document["message"].text = "Hello from Python in the browser!"
 </py-script>
