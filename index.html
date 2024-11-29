@@ -9,11 +9,15 @@
       <input type="text" id="fname" name="fname"><br><br> 
       <input type="submit" value="Rewrite">
     </form> 
-    <?PHP
-        echo shell_exec("python test.py 'parameter1'");
-    ?>
+    <py-script src=”test.py”></py-script>
+    <script defer src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
 </head>
 <body>
-    
+    <py-script>
+    from browser import document
+    document["message"].text = "Hello from Python in the browser!"
+</py-script>
+
+<p id="message"></p>
 </body>
 </html>
