@@ -7,20 +7,9 @@
 </head>
 
 <body>
-<script type="text/python">
-
-from browser import document
-from browser.widgets.dialog import InfoDialog
-
-def click(ev):
-    InfoDialog("Hello", f"Hello, {document['zone'].value} !")
-
-# bind event 'click' on button to callback function
-document["echo"].bind("click", click)
-
-</script>
-<input id="zone">
-<button id="echo">click !</button>
+<script type="text/python" src="test.py"></script>
+<input id="zone" autocomplete="off">
+<button id="mybutton">click!</button>
 </body>
 
 </html>
