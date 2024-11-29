@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brython Example</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
+    <!-- Include the Brython script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script>
 </head>
 <body onload="brython()">
 
-<h1>Welcome to Brython</h1>
+<h1>Welcome to Brython!</h1>
 
+<!-- Python code will update this element -->
+<p id="message"></p>
+
+<!-- Python code embedded within the <py-script> tag -->
 <py-script>
     from browser import document
     document["message"].text = "Hello from Python in the browser!"
 </py-script>
-
-<p id="message"></p>
 
 </body>
 </html>
